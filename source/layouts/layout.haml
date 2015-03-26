@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title
+      DataMelon#{': ' + current_article.title unless current_article.nil?}
+  %body
+    %h1 The DataMelon Blog
+    %p Blogging like it's 1999.
+    = yield

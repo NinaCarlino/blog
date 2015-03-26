@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'middleman'
+gem 'middleman-deploy'
+gem 'middleman-blog'
+gem 'middleman-syntax'
+gem 'redcarpet'
+gem 'pry'
+# gem 'middleman', '~> 3.3.7'
+# gem 'middleman-blog', '~> 3.5.3'
+# gem 'middleman-syntax'
+# gem 'middleman-deploy', '~> 1.0'

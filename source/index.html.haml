@@ -1,0 +1,8 @@
+- blog.articles[0...5].each do |article|
+  %h1
+    = article.title
+  %div
+    By: #{article.data[:author] || "Jason"}
+  %div
+    = article.body
+  %hr
