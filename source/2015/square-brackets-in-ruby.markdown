@@ -5,7 +5,7 @@ author: Rick
 tags:
 ---
 
-One thing that many Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method calls on those objects.
+One thing that many Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method call on those objects.
 
 The language has given `[]` a special syntax, but everything is an object at the end of the day.
 
