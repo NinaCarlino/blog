@@ -1,11 +1,11 @@
 ---
-title: Ruby Party Tricks Square Bracket Method Calls
+title: Defining Square Bracket Methods in Ruby
 date: 2015/03/26
 author: Rick
 tags:
 ---
 
-One thing that many Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method call on those objects.
+One thing that many Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method calls on those objects.
 
 The language has given `[]` a special syntax, but everything is an object at the end of the day.
 
@@ -15,10 +15,7 @@ Take a look at this example:
 
 array = [1, 'two', :three]
 
-# This is just syntactic sugar...
-array.send[0] # => 1
-
-#...for this...
+# This is just syntactic sugar for this...
 array.send(:[], 1) # => 'two'
 
 # ...Even this nonsense will work (don't do this at home, kids):
@@ -36,13 +33,13 @@ array = [1, 'two', :three]
 array.send(:[]=, 3, "FOUR") # => "FOUR"
 
 # This is syntactically valid, but may make you unpopular with other developers:
-array.[]=(0, 'zero') # => "FOUR"
+array.[]=(0, 'zero') # => "zero"
 
 array # => ["zero", "two", :three, "FOUR"]
 
 ```
 
-people don't realize that an object doesn't need to be an Array descendant to take advantage of the square bracket syntax.
+Taking this realization one step further you will realize that a class doesn't need to be an Array or Hash descendant to take advantage of the square bracket syntax.
 
 Let's build a simple object to illustrate the possibilities:
 
@@ -73,5 +70,4 @@ example[:x]
 
 ```
 
-The syntax for defining these methods may be surprising, but it can be a great way to encapsulate logic with a familiar interface.
-
+The syntax for defining these methods may be surprising, but it can be a great way to encapsulate logic with a familiar interface. The next time you find yourself needing to express collection lookups on your objects, consider using square brackets.
