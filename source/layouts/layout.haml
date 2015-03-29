@@ -4,6 +4,7 @@
     %title
       DataMelon#{': ' + current_article.title unless current_article.nil?}
     %link{rel: 'stylesheet', type: 'text/css', href: "http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css"}
+    = stylesheet_link_tag "syntax"
     %link{rel: 'stylesheet', type: 'text/css', href: "http://datamelon.io/stylesheets/style.css"}
     %link{:href => "http://fonts.googleapis.com/css?family=Nunito:400,700,300", :rel => "stylesheet", :type => "text/css"}/
     :javascript
@@ -40,8 +41,18 @@
         = yield
       .large-3.columns
         .panel
-          %h4 Newsletter Signup
-          %p Enter your email to get bi-weekly updates from our blog. You'll learn learn great web development tips and will have a chance to get free copies of our pre-release ebooks.
+          %h4 DataMelon Newsletter
+
+          %p Enter your email to get updates from our blog every 2 weeks.
+
+          %p You'll learn learn great web development tips and will have a chance to get free copies of our pre-release ebooks.
+          %form{:action => "//datamelon.us8.list-manage.com/subscribe/post?u=5e9469e1c2ccabe0baf493596&id=f58c14caac", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+            %label{:for => "mce-EMAIL"} Email:
+            %input{:name => "EMAIL", :type => "email", :value => ""}/
+            / Robots only...
+            / %input{:name => "b_5e9469e1c2ccabe0baf493596_f58c14caac", :tabindex => "-1", :type => "text", :value => ""}/
+            %input.button.small.round{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+
     %hr
     %footer.row{'max-width' => '97%'}
       .large-12.columns

@@ -5,20 +5,21 @@ author: Rick
 tags:
 ---
 
-One thing that many Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method call on those objects.
+One thing that many early Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method call on those objects.
 
 The language has given `[]` a special syntax, but everything is an object at the end of the day.
 
 Take a look at this example:
 
 ```ruby
+
 array = [1, 'two', :three]
 
-# This is just syntactic sugar for this...
+# array[1] is just syntactic sugar for this...
 array.send(:[], 1) # => 'two'
 
 # ...Even this nonsense will work (don't do this at home, kids):
-array.[](2) # => :three
+array.[](1) # => 'two'
 ```
 
 It also works for setting array elements with a similar method, `[]=`:

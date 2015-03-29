@@ -2,6 +2,9 @@
   %h2
     = article.title
   %div
-    %strong By: #{article.data[:author] || "Jason"} (#{article.date.strftime("%B %Y")})
+    %strong
+      By: <a href="/#team">#{article.data[:author] || "Jason"}</a> (#{article.date.strftime("%B %Y")})
   %p
     = article.body
+  %p
+    <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{article.title}")}">Comment</a>
