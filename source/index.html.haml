@@ -1,8 +1,7 @@
 - blog.articles[0...5].each do |article|
-  %h1
+  %h2
     = article.title
   %div
-    By: #{article.data[:author] || "Jason"}
-  %div
+    %strong By: #{article.data[:author] || "Jason"} (#{article.date.strftime("%B %Y")})
+  %p
     = article.body
-  %hr

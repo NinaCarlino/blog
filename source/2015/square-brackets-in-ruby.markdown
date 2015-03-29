@@ -1,5 +1,5 @@
 ---
-title: Defining Square Bracket Methods in Ruby
+title: Writing Ruby Square Bracket Methods
 date: 2015/03/26
 author: Rick
 tags:
@@ -12,7 +12,6 @@ The language has given `[]` a special syntax, but everything is an object at the
 Take a look at this example:
 
 ```ruby
-
 array = [1, 'two', :three]
 
 # This is just syntactic sugar for this...
@@ -20,7 +19,6 @@ array.send(:[], 1) # => 'two'
 
 # ...Even this nonsense will work (don't do this at home, kids):
 array.[](2) # => :three
-
 ```
 
 It also works for setting array elements with a similar method, `[]=`:
