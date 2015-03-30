@@ -46,6 +46,7 @@ activate :blog do |blog|
   blog.paginate = true
   blog.per_page = 10
   blog.page_link = "page/{num}"
+  blog.layout = "blog_layout"
 end
 
 # Build-specific configuration
