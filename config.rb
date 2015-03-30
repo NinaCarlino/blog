@@ -1,5 +1,4 @@
 require 'pry'
-# page 'source/index.html.erb', layout: false
 
 set :css_dir, 'stylesheets'
 
@@ -13,17 +12,19 @@ set :markdown, fenced_code_blocks: true, smartypants: true
 
 activate :syntax
 
+# activate :relative_assets
+
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.host   = 'datamelon.io'
-  deploy.path   = '~/www/blog'
+  deploy.path   = '~/www/'
   deploy.clean  = true # remove orphaned files on remote host, default: false
 end
 
 activate :blog do |blog|
 
   # This will add a prefix to all links, template references and source paths
-  # blog.prefix = "blog"
+  blog.prefix = "blog"
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
@@ -36,7 +37,6 @@ activate :blog do |blog|
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
-
   blog.permalink = ":year/:title.html"
   blog.sources = ":year/:title.html"
   # blog.tag_template = "tag.html"
@@ -65,3 +65,6 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, '/Content/images/'
 end
+
+# page 'index.html.haml', layout: false
+page '*.html.haml', layout: false

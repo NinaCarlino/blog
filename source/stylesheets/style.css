@@ -1,0 +1,114 @@
+h1, h2, h3, h4{
+  font-family: 'Nunito', sans-serif;
+  color: #1E881E;
+}
+
+p{
+  font-family: Helvetica, Arial, sans-serif;
+}
+.top-thing{
+  background-image: url(/images/melon-high.png);
+}
+.intro-text{
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 200px;
+  padding-bottom: 280px;
+  text-align: center;
+}
+.intro-text h1{
+  font-size: 50px;
+  color: #1E881E;
+}
+.nav-bar{
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid rgba(125, 166, 98, 1);
+  background-color: rgba(255,255,255,0.5);
+}
+.top-nav{
+  list-style: none;
+  padding-top: 20px;
+}
+.top-nav li{
+  display: inline;
+  margin-left: 20px;
+}
+.top-nav a{
+  color: #1E881E;
+  font-weight: bold;
+  font-size: 18px;
+}
+.top-nav a:hover{
+  text-decoration: underline;
+}
+.namelogo h1{
+  color: #1E881E;
+}
+.hero{
+  /*background-color: #fffaf0;*/
+}
+.work{
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.bullet-point{
+  text-align: center;
+  padding-top: 50px;
+}
+.indent, .team p{
+  text-indent: 10%;
+  text-align: justify;
+  padding-top: 30px;
+  margin: 0 20px 0 20px;
+}
+.team{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.team ul li p, .team ul li h4, .our-team h4{
+  /*color: #fffaf0;*/
+}
+.team ul li h4{
+  padding-top: 20px;
+}
+.our-team{
+  padding-bottom: 30px;
+  text-align: left;
+
+}
+
+.about{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.contact-us{
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  vertical-align: baseline;
+  padding-top: 80px;
+}
+.contact-us input, .contact-us textarea{
+  border-radius: 10px;
+}
+.contact-us textarea{
+  height: 150px;
+}
+.padding{
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.button {
+  background-color: #66CC66;
+}
+
+.button:hover {
+  background-color: #A7CB67;
+}
+a {
+  color: #66CC66;
+  font-weight: bold;
+}

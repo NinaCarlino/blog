@@ -1,0 +1,24 @@
+.large-9.columns
+  - blog.articles[0...5].each do |article|
+    %h2
+      = article.title
+    %div
+      %strong
+        By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}.
+    %p
+      = article.body
+    %p
+      <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{article.title}")}">Comment</a>
+.large-3.columns
+  .panel
+    %h4 DataMelon Newsletter
+
+    %p Enter your email to get updates from our blog every 2 weeks.
+
+    %p You'll learn learn great web development tips and will have a chance to get free copies of our pre-release ebooks.
+    %form{:action => "//datamelon.us8.list-manage.com/subscribe/post?u=5e9469e1c2ccabe0baf493596&id=f58c14caac", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+      %label{:for => "mce-EMAIL"} Email:
+      %input{:name => "EMAIL", :type => "email", :value => ""}/
+      / Robots only...
+      / %input{:name => "b_5e9469e1c2ccabe0baf493596_f58c14caac", :tabindex => "-1", :type => "text", :value => ""}/
+      %input.button.small.round{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
