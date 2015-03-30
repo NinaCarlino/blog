@@ -5,7 +5,9 @@
     %div
       %strong
         By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}
-    %p #{link_to "Permalink", article.url}
+    %p
+      %small
+        #{link_to "Permalink", article.url}
     %p
       = article.body
     %p

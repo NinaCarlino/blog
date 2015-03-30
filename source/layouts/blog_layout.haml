@@ -1,3 +1,11 @@
-%h1
+= partial "header"
+%h2
   = current_article.title
-= yield
+%div
+  %strong
+    By: <a href="/#team">#{current_article.data[:author] || "Jason"}</a> on #{current_article.date.strftime("%B %Y")}
+%p
+  = current_article.body
+%p
+  <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{current_article.title}")}">Comment</a>
+= partial "footer"
