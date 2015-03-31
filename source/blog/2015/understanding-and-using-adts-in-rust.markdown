@@ -1,5 +1,5 @@
 ---
-title: Understanding and Using ADTs (Algebraic Data Types) in Rust
+title: Understanding and Using ADTs in Rust
 date: 2015/03/30
 author: Jason
 tags: Rust, Algebraic Data Types
