@@ -16,6 +16,7 @@ activate :syntax
 
 activate :deploy do |deploy|
   deploy.method = :rsync
+  deploy.user   = ENV['BLOG_USER'] || deploy.user
   deploy.host   = 'datamelon.io'
   deploy.path   = '~/www/'
   deploy.clean  = true # remove orphaned files on remote host, default: false
