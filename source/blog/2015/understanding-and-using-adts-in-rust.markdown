@@ -5,24 +5,9 @@ author: Jason
 tags: Rust, Algebraic Data Types
 ---
 
-Have you ever had any of these thoughts or similar thoughts?
+The concept of ADTs (Algebraic Data Type) took me a long time to wrap my head around. I come from a Python background where ADTs are not a thing. When I finally figured out what was going on in ADT-land my growing comprehension of Rust-lang sort of snapped into place.
 
-> "What are Algebraic Data Types? How do they work?"
-
-> "Oh please, please, please don't let my boss ask me about ADTs;
-> I don't want to look foolish."
-
-> "I've read everything I can about ADTs and it's just not clicking"
-
-If so, you are in luck.
-
-I have had these thoughts and once I figured out what was going on
-in ADT-land my comprehension of the entire Rust language kind of 
-snapped into place for me.
-
-This is a description of what an ADT (Algebraic Data Type) is and how to use it. 
-
-I decided to use FizzBuzz as an example.
+I decided to use FizzBuzz as an example because FizzBuzz  is simple and should feel familiar to most developers.
 
 #### An enum
 
@@ -52,7 +37,7 @@ In the case of Int(isize), the FizzedEnum is in a state that wraps an integer of
 #### A function that returns one type that can be many types
 
 
-```rust 
+```rust
 fn fizzer(num: isize)-> FizzedEnum {
     if num % 15 == 0     { FizzedEnum::FizzBuzz }
     else if num % 5 == 0 { FizzedEnum::Fizz }
@@ -60,28 +45,24 @@ fn fizzer(num: isize)-> FizzedEnum {
     else                 { FizzedEnum::Int(num) }
 }
 ```
+The logic for which category of FizzedEnum is returned from fizzer() follows the rules of FizzBuzz.
 
 The above function **returns one type**, FizzedEnum, which **can be in
 only one of the states** FizzBuzz, Fizz, Buzz, or Int. While the
 first three members of the enum FizzedEnum have no contents the
 fourth member, Int, wraps an integer of type isize.
 
-This is a **very important point**: From this function the state of the
+This is a **VERY IMPORTANT** point: From this function the state of the
 resulting FizzedEnum is returned. This resulting FizzedEnum type carries
 information about its own state. **If the FizzedEnum is in the 'Int' state
-it also carries the value of an integer**. 
+it also carries the value of an integer**.
 
-**Using this principle one may create functions that are capable of returning Enums that "carry" any type of data. This is the very crux on which the principle of enums exists. This is their purpose.**
-
-The logic for which category of FizzedEnum is returned is
-pretty obvious and requires no explanation (this is FizzBuzz for
-goodess sake).
+**Using this principle one may create functions that are capable of returning Enums that "carry" any type of data . This is the crux on which the principle of enums exists. This is their purpose.**
 
 
 #### Matching on an Enum
 
-This is the main function. The main function is executed when
-the Rust binary is executed. 
+This is the main function. The main function is executed when the Rust binary is executed.
 
 ```rust
 fn main() {
@@ -96,21 +77,25 @@ fn main() {
     }
 }
 ```
+In main() we iterate through a range of numbers between 1 and 25 (exclusive). On each iteration we:
 
-In main() we iterate through a range of numbers between 1 and 25. On each iteration we pass the number (num) into fizzer() then use Rust's match statement to take the appropriate action (a branch) for each state that has been returned to the result variable.
+1. pass the variable num into the fizzer function
+2. use Rust’s match statement to branch according to the state of the result
+3. println! the appropriate message
 
-Notice that the match statement above required no underscore/catch-all clause to compile. When matching the variable 'result' (which is of type FizzedEnum) it can only be in one of four states FizzBuzz, Fizz, Buzz, or Int. 
+Notice that the match statement above required no underscore/catch-all clause to compile. When matching the variable 'result' (which is of type FizzedEnum) it can only be in one of four states FizzBuzz, Fizz, Buzz, or Int. The match statement in Rust must be exhaustive, and this one is.
 
 ##### Conclusion
 
-TL;DR - Just read the bold parts. If you're clever enough it might make some sense.
+TL;DR - Just read the bold parts.
 
-I really hope this example has helped you understand the use case and purpose of ADTs. Here is [a gist that can be copied-pasted-compiled-and-run](https://gist.github.com/elbow-jason/0fdea26fa4aad95e1098#file-gistfile1-rs).
+I really hope this example has helped you understand the use case and purpose of ADTs.
+
+[Try it in the Rust playground](http://is.gd/OElt98)
 
 > "Jason, this example is overly complex. You could have just used
 > println! in the fizzer function."
 -Some Sir
 
->"I know, but the point was to show off how to use ADTs while still
-> accomplishing nothing useful. Good day, sir."
--Jason 
+>"I know, but the point was to show off how to use ADTs. Good day, sir."
+-Jason

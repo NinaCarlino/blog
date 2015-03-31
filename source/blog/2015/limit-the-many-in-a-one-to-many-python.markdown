@@ -6,7 +6,7 @@ tags: Flask-SQLAlchemy, SQLAlchemy
 ---
 
 
-While working on our most recent contract the client described a relationship between two entities. In this relationship each of the first entity had "up to, but not more than, 3" of the second.
+While working on our most recent contract the client described a relationship between two entities. In this relationship each of the first entity had "up to but not more than 3" of the second.
 
 For clarity's sake let's call the first entity a **Farmer** and the second entity we'll call a **BlindMouse**. The situation that the client was describing (in terms of a relational database) is called a **one-to-many** relationship. However, in most cases there is not a limit to the number of the **many** (the number of **BlindMouses**) that the **one** (a **Farmer**) can have. The solution we came up to throw a custom exception if an attempt is made to add more than the allowed number of records (**BlindMouses**) that can be associated with the foreign key of the **one** (**BlindMouse.farmer_id**)
 
