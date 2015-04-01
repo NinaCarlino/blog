@@ -86,7 +86,7 @@ Within `main()` we iterate through a range of numbers between 1 and 25 (exclusiv
 
 Notice that the match statement above required no underscore/catch-all clause to compile. When matching the variable 'result' (which is of type FizzedEnum) it can only be in one of four states FizzBuzz, Fizz, Buzz, or Int. The match statement in Rust must be exhaustive, and this one is.
 
-##### Conclusion
+#### Conclusion
 
 You should have a pretty good understanding of ADTs in rust now. If you're still unsure, drop us a line and we will dive deeper in our next article. Thanks for reading.
 

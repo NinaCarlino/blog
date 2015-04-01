@@ -1,17 +1,16 @@
 ---
-title: "SQLAlchemy: Limiting the Many in a One-To-Many Relationship"
+title: "Size Constrained One-To-Many with SQLAlchemy"
 date: 2015/03/31
 author: Jason
 tags: Flask-SQLAlchemy, SQLAlchemy
-published: false
+published: true
 ---
 
+A recent project of ours required a one-to-many relation in SQLAlchemy. What made this relationship different was that **the size of the relation needed to be less than four**.
 
-While working on our most recent contract the client described a relationship between two entities. In this relationship each of the first entity had "up to but not more than 3" of the second.
+To illustrate our solution, we will create a `Farmer` entity that has many `BlindMouse` entities. We throw a custom exception if an attempt is made to add more than the allowed number of records that can be associated with the foreign key of the `Farmer`.
 
-For clarity's sake let's call the first entity a **Farmer** and the second entity we'll call a **BlindMouse**. The situation that the client was describing (in terms of a relational database) is called a **one-to-many** relationship. However, in most cases there is not a limit to the number of the **many** (the number of **BlindMouses**) that the **one** (a **Farmer**) can have. The solution we came up to throw a custom exception if an attempt is made to add more than the allowed number of records (**BlindMouses**) that can be associated with the foreign key of the **one** (**BlindMouse.farmer_id**)
-
-Here I am using Flask-SQLAlchemy, but this can just as easily be implemented in plain old SQLAlchemy.
+The following uses Flask-SQLAlchemy, but can just as easily be implemented in standard SQLAlchemy.
 
 We are given the following tables:
 
@@ -65,6 +64,6 @@ def blindmouse_per_farmer_limit_check(target, value, oldvalue, initiator):
 
 ```
 
-If the addition of a new **BlindMouse** to the **one-to-many** of the **Farmer** exceeds our limit (3) an ```IntegrityError``` is raised and the new **BlindMouse** is not added.
+If the addition of a new `BlindMouse` to the `Farmer` exceeds our limit (3) an `IntegrityError` is raised and the new `BlindMouse` is not added.
 
-For a simple working example, follow the instructions in [this repo of mine](https://github.com/elbow-jason/three-blind-mice) and if you like the example give it a star.
+For a simple working example, follow the instructions in [this repo](https://github.com/elbow-jason/three-blind-mice). As always, questions are welcome.
