@@ -112,3 +112,7 @@ a {
   color: #66CC66;
   font-weight: bold;
 }
+
+.newsletterbox {
+  position: fixed;
+}

@@ -4,16 +4,14 @@
       = article.title
     %div
       %strong
-        By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}
-    %p
-      %small
-        #{link_to "Permalink", article.url}
+        By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}. #{link_to "Permalink", article.url}
     %p
       = article.body
     %p
-      <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{article.title}")}">Comment</a>
+      <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{article.title}")}">Comment</a> Your email will not be publicly viewable. No registration needed.
+    %hr
 .large-3.columns
-  .panel
+  .panel.newsletterbox
     %h4 DataMelon Newsletter
 
     %p Enter your email to get updates from our blog every 2 weeks.

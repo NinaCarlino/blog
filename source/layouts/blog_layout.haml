@@ -8,5 +8,6 @@
   = current_article.body
 %p
   <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{current_article.title}")}">Comment</a>
-%p Your email will not be publicly viewable. No registration needed.
+%p
+  Your email will not be publicly viewable. No registration needed.
 = partial "footer"
