@@ -6,7 +6,7 @@ tags: Symmetric Encryption
 published: false
 ---
 
-Securing data is hard. The methods are scattered. The vulnerabilities are a nightmare. Ideally, one would like a simple, yet effective way to secure data. The following is a simple yet effective recipe for developing secure storage systems.
+Securing data is hard. The methods are scattered. The vulnerabilities are a nightmare. Ideally, one would like a simple yet effective way to secure data. The following is a simple yet effective recipe for developing secure storage systems.
 
 Enter Python's [cryptography module](https://cryptography.io/en/latest/).
 
