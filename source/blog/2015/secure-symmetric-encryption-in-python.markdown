@@ -10,7 +10,7 @@ Securing data is hard. The methods are scattered. The vulnerabilities are a nigh
 
 Enter Python's [cryptography module](https://cryptography.io/en/latest/).
 
-The [cryptography module](https://cryptography.io/en/latest/) contains many useful tools. We will focus on [Fernet](https://cryptography.io/en/latest/fernet/) and [MultiFernet](https://cryptography.io/en/latest/fernet/#cryptography.fernet.MultiFernet). Cryptography's Fernet classes enable us to quickly and easily setup symmetric encryption with just a few lines of code.
+The [cryptography module](https://cryptography.io/en/latest/) contains many useful tools. We will focus on [Fernet](https://cryptography.io/en/latest/fernet/). Cryptography's Fernet classes enable us to quickly and easily setup symmetric encryption with just a few lines of code.
 
 The Fernet class's API is extremely simple. Fernet has one ```classmethod``` called ```generate_key()``` and two instance methods ```encrypt(plaintext_binary)``` and ```decrypt(cipher_binary)```.
 
