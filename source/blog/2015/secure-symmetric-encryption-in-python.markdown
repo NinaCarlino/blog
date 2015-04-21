@@ -1,18 +1,18 @@
 ---
-title: Keep Your Secrets Secret
+title: Keeping Secrets Secret in Python
 date: 2015/04/14
 author: Jason
 tags: Symmetric Encryption
-published: false
+published: true
 ---
 
-Securing data is hard. The methods are scattered. The vulnerabilities are a nightmare. Ideally, one would like a simple yet effective way to secure data.
+Securing data is hard. The methods are scattered. The vulnerabilities are a nightmare.
 
 Enter Python's [cryptography module](https://cryptography.io/en/latest/).
 
-The [cryptography module](https://cryptography.io/en/latest/) contains many useful tools. We will focus on [Fernet](https://cryptography.io/en/latest/fernet/). Cryptography's Fernet classes enable us to quickly and easily setup symmetric encryption with just a few lines of code.
+This post will focus on [Fernet](https://cryptography.io/en/latest/fernet/) within the [cryptography module](https://cryptography.io/en/latest/). Cryptography's Fernet classes enable us to quickly and easily setup symmetric encryption with just a few lines of code.
 
-The Fernet class's API is extremely simple. Fernet has one ```classmethod``` called ```generate_key()``` and two instance methods ```encrypt(plaintext_binary)``` and ```decrypt(cipher_binary)```.
+The Fernet class's API is extremely simple. Fernet has one `classmethod` called `generate_key()` and two instance methods `encrypt(plaintext_binary)` and `decrypt(cipher_binary)`.
 
 ##### The Setup
 
@@ -35,7 +35,7 @@ Add the key to your environment variables:
 $ SECRET_FERNET_KEY='BP04_l7C3wByNiEaEiseNiP0ZrqZ7s3qL-mkG8eHlJY='
 ```
 
-Note: There are many clever ways to get the key into the environment variables. Just make sure it's secure.
+Keeping secrets as environment variables is a more secure alternative than putting them into source control. It's not fool proof, though. Be aware of the [risks and best practices](http://stackoverflow.com/questions/12461484/is-it-secure-to-store-passwords-as-environment-variables-rather-than-as-plain-t) and make sure to research the a method that works best for your use case..
 
 ##### The Functions
 
@@ -75,4 +75,4 @@ print plaintext_spoiler
 
 ```
 
-That's all for now. Next time I hope to outline the use of some of SQLAlchemy's advanced features to use these functions to easily persist data to a database.
+That's all for now. Next time I hope to outline the use of some of SQLAlchemy's advanced features to use these functions to easily persist secure data to a database.
