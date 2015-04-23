@@ -17,12 +17,14 @@ Using the new script is easy. [Click here to visit the repo](https://github.com/
 
 #### Installation
 
-Make sure when you clone this repo that the files will persist (not a tmp/ dir)
+Make sure when you clone this repo that the files will persist (not a tmp/ dir).
 
-1. ```$ git clone https://github.com/DataMelon/install-elixir-1.0.4.git```
+In bash:
+
+1. ```git clone https://github.com/DataMelon/install-elixir-1.0.4.git```
 1. ```cd install-elixir-1.0.4.git```
-1. ```$ chmod u+x install_erlang_and_elixir.sh```
-1. ```$ sudo ./install_erlang_and_elixir.sh```
+1. ```chmod u+x install_erlang_and_elixir.sh```
+1. ```sudo ./install_erlang_and_elixir.sh```
 1. Logout and Log in.
 
 #### Conclusion
