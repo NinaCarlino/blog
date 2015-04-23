@@ -1,7 +1,8 @@
 = partial "header"
 .large-9.columns
-  %h2
-    = current_article.title
+  %h1.blog-heading
+    #{link_to current_article.title, current_article.url}
+
   %div
     %strong
       By: <a href="/#team">#{current_article.data[:author] || "Jason"}</a> on #{current_article.date.strftime("%B %Y")}
