@@ -10,7 +10,7 @@ An aspiring Ruby learner recently asked us an interesting question:
 
  > How the heck do HTTP requests work, anyway?
 
-Good question. There are plenty of tools out there for serving and requesting HTTP documents in Ruby such as [the standard library HTTP class](http://ruby-doc.org/stdlib-2.2.2/libdoc/net/http/rdoc/Net/HTTP.html), a [slew of 3rd party HTTP clients](https://www.ruby-toolbox.com/categories/http_clients). If you want to serve the documents, you have options such as [Sinatra](http://www.sinatrarb.com/) and everyone's default choice: [Ruby on Rails].
+Good question. There are plenty of tools out there for serving and requesting HTTP documents in Ruby such as [the standard library HTTP class](http://ruby-doc.org/stdlib-2.2.2/libdoc/net/http/rdoc/Net/HTTP.html), a [slew of 3rd party HTTP clients](https://www.ruby-toolbox.com/categories/http_clients). If you want to serve the documents, you have options such as [Sinatra](http://www.sinatrarb.com/) and everyone's default choice: [Ruby on Rails](http://rubyonrails.org/).
 
 They're great tools because they abstract away all the low level details. Today, we will forgo the niceties of such libraries and write an HTTP request using the Ruby standard library and raw TCP sockets.
 
