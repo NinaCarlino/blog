@@ -1,15 +1,25 @@
+---
+pageable: true
+---
 .large-9.columns
-  - blog.articles[0...5].each do |article|
-    %h1.blog-heading 
+  - page_articles.each do |article|
+    %h1.blog-heading
       #{link_to article.title, article.url}
     %div
       %strong
-        By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}. #{link_to "Permalink", article.url}
+        By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}
     %p
-      = article.body
+      /= article.body
+      wow
     %p
       <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{article.title}")}">Comment</a> Your email will not be publicly viewable. No registration needed.
     %hr
+  - if paginate
+    - if prev_page
+      = link_to 'Previous page', prev_page, {:class => 'previous-page'}
+    - if next_page
+      = link_to 'next page', next_page
+
 .large-3.columns
   .panel.newsletterbox
     %h4 DataMelon Newsletter
