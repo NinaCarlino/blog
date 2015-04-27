@@ -4,6 +4,7 @@ date: 2015/03/31
 author: Jason
 tags: Flask-SQLAlchemy, SQLAlchemy
 published: true
+featured_image: py_sql.png
 ---
 
 A recent project of ours required a one-to-many relation in SQLAlchemy. What made this relationship different was that **the size of the relation needed to be less than four**.

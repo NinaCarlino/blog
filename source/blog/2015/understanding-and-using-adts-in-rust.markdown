@@ -3,6 +3,7 @@ title: Understanding and Using ADTs in Rust
 date: 2015/03/30
 author: Jason
 tags: Rust, Algebraic Data Types
+featured_image: rust.png
 ---
 
 The concept of ADTs (Algebraic Data Type) took me a while to wrap my head around. I come from a Python background where ADTs are not a thing. When I finally figured out what was going on in ADT-land my growing comprehension of Rust-lang sort of snapped into place.

@@ -3,6 +3,7 @@ title: Writing Ruby Square Bracket Methods
 date: 2015/03/26
 author: Rick
 tags:
+featured_image: ruby.png
 ---
 
 One thing that many early Rubyists fail to realize about square brackets (`[]`) in Ruby is that they are nothing more than a method with some added syntactic sugar. Everything is an object in Ruby, and square brackets are just a method call on those objects.

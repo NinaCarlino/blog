@@ -4,6 +4,7 @@ date: 2015/04/15
 author: Jason
 tags: Symmetric Encryption, Flask, SQLAlchemy, Hybrid Properties
 published: false
+featured_image: py_sql.png
 ---
 
 In a previous blog post we featured the Fernet class of the cryptography module. This time we'll be persisting encrypted data to a database using Flask-SQLAlchemy. This blog post stresses the importance of application level encryption.

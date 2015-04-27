@@ -3,6 +3,7 @@ title: "Why You're Going to Love MithrilJS"
 date: 2015/04/04
 author: Rick
 published: true
+featured_image: mithril.png
 ---
 
  > I started using MithrilJS this month and it has impressed me more than any front end library ever has. Despite being a happy Angular developer for quite some time, I've ocassionally found myself hoping for a more simple solution. On the opposite side of the spectrum, I've felt that lighter weight options like React were too stripped down out of the box.

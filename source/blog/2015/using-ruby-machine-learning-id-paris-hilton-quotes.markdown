@@ -3,6 +3,7 @@ title: "Using Ruby Machine Learning to Find Paris Hilton Quotes"
 date: 2015/04/04
 author: Rick
 published: true
+featured_image: ruby_ml.png
 ---
 
 

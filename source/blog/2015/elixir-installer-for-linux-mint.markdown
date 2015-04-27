@@ -4,6 +4,7 @@ date: 2015/04/23
 author: Jason
 tags: Elixir, Installation, Linux Mint
 published: false
+featured_image: elixir.png
 ---
 
 For a while now I've been pushing/harassing Rick to learn and adopt [Elixir](http://elixir-lang.org).

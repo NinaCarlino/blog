@@ -4,6 +4,7 @@ date: 2015/04/14
 author: Jason
 tags: Symmetric Encryption
 published: true
+featured_image: python.png
 ---
 
 Securing data is hard. The methods are scattered. The vulnerabilities are a nightmare.

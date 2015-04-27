@@ -3,22 +3,33 @@ pageable: true
 ---
 .large-9.columns
   - page_articles.each do |article|
-    %h1.blog-heading
-      #{link_to article.title, article.url}
-    %div
-      %strong
-        By: <a href="/#team">#{article.data[:author] || "Jason"}</a> on #{article.date.strftime("%B %Y")}
-    %p
-      /= article.body
-      wow
-    %p
-      <a class="button tiny round" href="mailto:team@datamelon.io?subject=#{URI.escape("Comment: #{article.title}")}">Comment</a> Your email will not be publicly viewable. No registration needed.
+    .row.spaced
+      .large-4.small-12.columns
+        .img-wrapper
+          - unless article.data[:featured_image]
+            = image_tag "melon.png"
+          - else
+            = image_tag image_path("blog/#{article.date.year}/#{article.data[:featured_image]}")
+      .large-8.small-12.columns
+        .window
+          %h1.blog-heading
+            = link_to article.title, article.url
+          .author
+            %strong
+              By
+              %a{:href => "/#team"}
+                = article.data[:author] || "Jason"
+                = "on #{article.date.strftime("%B %Y")}"
+          %p
+            %span
+              = article.summary(300)
+              = link_to("Read More &raquo", article.url)
     %hr
   - if paginate
     - if prev_page
-      = link_to 'Previous page', prev_page, {:class => 'previous-page'}
+      = link_to '&laquo; Previous', prev_page, class: 'button small round left'
     - if next_page
-      = link_to 'next page', next_page
+      = link_to '&raquo; Next', next_page, class: 'button small round right'
 
 .large-3.columns
   .panel.newsletterbox
@@ -31,5 +42,5 @@ pageable: true
       %label{:for => "mce-EMAIL"} Email:
       %input{:name => "EMAIL", :type => "email", :value => ""}/
       / Robots only...
-      / %input{:name => "b_5e9469e1c2ccabe0baf493596_f58c14caac", :tabindex => "-1", :type => "text", :value => ""}/
+      %input.print-only{:name => "b_5e9469e1c2ccabe0baf493596_f58c14caac", :tabindex => "-1", :type => "text", :value => ""}/
       %input.button.small.round{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
