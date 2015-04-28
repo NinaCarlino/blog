@@ -27,8 +27,8 @@ Experienced Rails users should have no problem adapting to the framework after l
 
 In Volt, Javascript usage is minimized and Ruby code is shared by the server and the browser. This is accomplished via use of the [Opal Compiler](http://opalrb.org/docs/compiled_ruby/). I was originally skeptical of how productive I would be running anything other than Javascript on the frontend, but was surprised by the simplicity.
 
-## Reactive Stores
+## Easy Syncing via Reactive Models
 
-This is the most important concept when learning volt. `Volt::Model` (and its counter part, `Volt::ArrayModel`) act as hash-like Ruby objects that exist both on the front end and the back end at the same time. Updates to the model propagate automatically in most cases.
+This was the most important concept when learning volt. `Volt::Model` (and its counter part, `Volt::ArrayModel`) act as hash-like Ruby objects that sync between the front end and back end simultaneously. Updates to the model propagate automatically in most cases.
 
 Volt offers the concept of "stores" to sync application data in a variety of forms- persistent and non-persistent. It provides a uniform means of syncing data between local storage, MongoDB, cookies, and sessions. More databases are planned for future releases.
