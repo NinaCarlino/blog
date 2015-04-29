@@ -7,27 +7,27 @@ published: false
 featured_image: volt.png
 ---
 
- > In my first 10 minutes with Volt, I was amazed to find a `puts` statement in a controller action appear not in my terminal console, but in my browser window. Writing Ruby code for the front end with Volt was so easy I didn't even realize I was doing it.
-
-There were no complicated compilation step to follow. No build tool to install. I ran `volt server` and everything took place transparently in the background. Changes to my code or data happened instantaneously- no refresh or restart.
-
-Ruby on Rails has been a go-to resource in web development for the past 10 years because it offers developers a way to build sites fast while preserving developer happiness.
+The Ruby community has seen a recent surge in interest for the [Volt Realtime web frontend framework](http://voltframework.com/). I gave it a spin this month and was surprised with the results, particularly for its focus on developer productivity.
 
 The Volt framework is a relative newcomer to the Ruby ecosystem and it embodies the same ethos as Rails- fast development work flows that don't compromise productivity. Unlike Rails, it places its core emphasis on real-time application development.
 
 I'm excited about Volt because it is the first framework to offer a productive, full-stack work flow for Rubyists developing realtime apps. It's also the most popular framework to utilize OpalRB- a Ruby-to-Javascript compiler for use in the browser.
 
+<!-- ## The Complexity Recession is Coming
+
+The advent of AJAX caused a bull market for web development complexity. As our use of AJAX increased, technologies such as front end MVC came about to bring order to the chaso. In doing so, we have increased the level of complexity to the point that we must define routes, models and certain other behavior In his talk at Railsconf, Ryan Stout talked about. . .
 ## Adapting to the Workflow
-
-Learning Volt from a Rails perspective meant there were new concepts to learn, but it was a relatively smooth transition.
-
-Experienced Rails users should have no problem adapting to the framework after learning a few key concepts.
+ -->
 
 ## The Opal Compiler: Ruby Everywhere
 
+In my first 10 minutes with Volt, I was amazed to find a `puts` statement in a controller action appeared not in my terminal console, but in my browser window. That's because Volt applications run Ruby on the frontend and the backend. Writing realtime Ruby code for the front end with Volt was so easy I didn't even realize I was doing it.
+
+There were no complicated compilation step to follow. No build tool to install. I ran `volt server` and everything took place transparently in the background. Changes to my code or data happened instantaneously- no refresh or restart.
+
 In Volt, Javascript usage is minimized and Ruby code is shared by the server and the browser. This is accomplished via use of the [Opal Compiler](http://opalrb.org/docs/compiled_ruby/). I was originally skeptical of how productive I would be running anything other than Javascript on the frontend, but was surprised by the simplicity.
 
-Here's an example of Ruby running as Javascript in a controller action:
+EXHIBIT A: Calling a javascript alert with Ruby
 
 ```ruby
 # Calling javascript functions in Ruby
@@ -45,17 +45,18 @@ end
 
 ## Easy Syncing via Reactive Models
 
-This was the most important concept when learning volt. `Volt::Model` (and its counter part, `Volt::ArrayModel`) act as hash-like Ruby objects that sync between the front end and back end simultaneously. Updates to the model propagate automatically in most cases.
+This was the most important concept when learning volt. `Volt::Model` (and its counter part, `Volt::ArrayModel`) act as hash-like Ruby objects that sync between the front end and back end simultaneously. Updates to the model propagate automatically in most cases. Think of them as variabls that live in limbo between the frontend and backend.
 
-Volt offers the concept of "stores" to sync application data in a variety of forms- persistent and non-persistent. It provides a uniform means of syncing data between local storage, MongoDB, cookies, and sessions. More databases are planned for future releases.
+Volt offers the concept of "stores" to sync application data in a variety of forms- persistent and non-persistent. It provides a uniform means of syncing data between local storage, MongoDB, cookies, sessions and URL params. More databases are planned for future releases.
 
-Let's make a realtime chat app in a few line of Ruby and HTML:
+Let's make a realtime chat app in a few lines of Ruby and HTML:
 
 ```ruby
-# Create a persistent data model.
+# Create a persistent data model. This gets stored in MongoDB.
 class ChatMessage < Volt::Model
 end
 ```
+
 Here's the view code:
 
 ```html
@@ -69,13 +70,12 @@ Here's the view code:
     {{ end }}
   </ul>
 ```
-Here's a GIF of the update events rendering in realtime:
+Here's a GIF screencast of the update events rendering in realtime:
 
 ![Realtime Updates](/images/blog/2015/volt-animation.gif)
 
+## The Best is Yet to Come
 
-## More Features Coming
+The project is less than 2 years old and has already made huge strides forward. It feels a lot like the early days of Rails- solving huge problems in a short amount of time and with great promise ahead.
 
-After taking the time to learn Volt, I can see not only the benefits, but the implications that this will have for the future of Ruby. What makes Volt special is that it is committed to productivity, code reuse and an API that feels natural for Rubyists. The project is less than 2 years old and already it has made huge strides.
-
-Stay tuned for future posts where I dive deeper into the specifics and cover basic use cases.
+I hope this post motivates you to take the plunge and try Volt for yourself. Stay tuned for future posts where I dive deeper and cover basic use cases. Have a specific question for a future post? Submit a comment or drop a line on [Twitter](https://twitter.com/datamelon) or [Reddit](https://www.reddit.com/user/rickcarlino).
