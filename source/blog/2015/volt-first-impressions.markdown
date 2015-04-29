@@ -7,23 +7,17 @@ published: false
 featured_image: volt.png
 ---
 
-The Ruby community has seen a recent surge in interest for the [Volt Realtime web frontend framework](http://voltframework.com/). I gave it a spin this month and was surprised with the results, particularly for its focus on developer productivity.
+The Ruby community has seen a recent surge in interest for the [Volt web framework](http://voltframework.com/). I gave it a spin this month and was surprised with the results, particularly for its focus on developer productivity.
 
-The Volt framework is a relative newcomer to the Ruby ecosystem and it embodies the same ethos as Rails- fast development work flows that don't compromise productivity. Unlike Rails, it places its core emphasis on real-time application development.
+The Volt framework is a relative newcomer to the Ruby ecosystem and it embodies the same ethos as Rails- fast development work flows that don't compromise productivity. It also provides support for real-time application development out of the box.
 
-I'm excited about Volt because it is the first framework to offer a productive, full-stack work flow for Rubyists developing realtime apps. It's also the most popular framework to utilize OpalRB- a Ruby-to-Javascript compiler for use in the browser.
-
-<!-- ## The Complexity Recession is Coming
-
-The advent of AJAX caused a bull market for web development complexity. As our use of AJAX increased, technologies such as front end MVC came about to bring order to the chaso. In doing so, we have increased the level of complexity to the point that we must define routes, models and certain other behavior In his talk at Railsconf, Ryan Stout talked about. . .
-## Adapting to the Workflow
- -->
+Realtime application development isn't Volt's only specialty, either. Volt allows development of traditional HTTP APIs out of the box, complete with a permissions and validation scheme.
 
 ## The Opal Compiler: Ruby Everywhere
 
-In my first 10 minutes with Volt, I was amazed to find a `puts` statement in a controller action appeared not in my terminal console, but in my browser window. That's because Volt applications run Ruby on the frontend and the backend. Writing realtime Ruby code for the front end with Volt was so easy I didn't even realize I was doing it.
+In my first 10 minutes with Volt, I was amazed to find that a `puts` statement in a controller action appeared not in my terminal console, but in my browser window. That's because Volt applications run Ruby on the frontend and the backend. Writing Ruby code for the front end with Volt was so easy I didn't even realize I was doing it.
 
-There were no complicated compilation step to follow. No build tool to install. I ran `volt server` and everything took place transparently in the background. Changes to my code or data happened instantaneously- no refresh or restart.
+There were no complicated compilation step to follow. No build tools to install. I ran `volt server` and everything took place transparently in the background. Changes to my code and data happened instantaneously- no refresh or restart.
 
 In Volt, Javascript usage is minimized and Ruby code is shared by the server and the browser. This is accomplished via use of the [Opal Compiler](http://opalrb.org/docs/compiled_ruby/). I was originally skeptical of how productive I would be running anything other than Javascript on the frontend, but was surprised by the simplicity.
 
@@ -73,6 +67,43 @@ Here's the view code:
 Here's a GIF screencast of the update events rendering in realtime:
 
 ![Realtime Updates](/images/blog/2015/volt-animation.gif)
+
+## Full HTTP Endpoint Support
+
+It's a common misconception that Volt is only a realtime framework. It also provides workflows for traditional HTTP application development.
+
+Here's an example [straight from the docs](https://github.com/voltrb/volt/blob/1b692e70f4cea3b6b42f9e5c67f192f6447bff93/spec/apps/kitchen_sink/app/main/controllers/server/simple_http_controller.rb):
+
+```ruby
+
+# Routes for HTTP endpoint
+get '/simple_http', controller: 'simple_http', action: 'index'
+get '/simple_http/store', controller: 'simple_http', action: 'show'
+post '/simple_http/upload', controller: 'simple_http', action: 'upload'
+
+```
+
+
+```ruby
+
+ # Example controller
+
+class SimpleHttpController < Volt::HttpController
+  def index
+    render text: 'this is just some text'
+  end
+
+  def show
+    render text: "You had me at #{store._simple_http_tests.first._name}"
+  end
+
+  def upload
+    uploaded = params[:file][:tempfile]
+    File.open('tmp/uploaded_file', 'wb') { |f| f.write(uploaded.read) }
+    render text: 'Thanks for uploading'
+  end
+end
+```
 
 ## The Best is Yet to Come
 
