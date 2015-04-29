@@ -7,11 +7,11 @@ published: false
 featured_image: volt.png
 ---
 
-The Ruby community has seen a recent surge in interest for the [Volt web framework](http://voltframework.com/). I gave it a spin this month and was surprised with the results, particularly for its focus on developer productivity.
+The Ruby community has seen a surge in interest for the [Volt web framework](http://voltframework.com/). I gave it a spin this month and was surprised with the results, particularly for its focus on developer productivity.
 
 The Volt framework is a relative newcomer to the Ruby ecosystem and it embodies the same ethos as Rails- fast development work flows that don't compromise productivity. It also provides support for real-time application development out of the box.
 
-Realtime application development isn't Volt's only specialty, either. Volt allows development of traditional HTTP APIs out of the box, complete with a permissions and validation scheme.
+Realtime application development isn't Volt's only specialty, however. Volt allows development of traditional HTTP APIs out of the box, complete with a permissions and validation scheme.
 
 ## The Opal Compiler: Ruby Everywhere
 
@@ -39,7 +39,7 @@ end
 
 ## Easy Syncing via Reactive Models
 
-This was the most important concept when learning volt. `Volt::Model` (and its counter part, `Volt::ArrayModel`) act as hash-like Ruby objects that sync between the front end and back end simultaneously. Updates to the model propagate automatically in most cases. Think of them as variabls that live in limbo between the frontend and backend.
+This was the most important concept when learning volt. `Volt::Model` (and its counter part, `Volt::ArrayModel`) act as hash-like Ruby objects that sync between the front end and back end simultaneously. Updates to the model propagate automatically in most cases. Think of them as variables that live in limbo between the frontend and backend.
 
 Volt offers the concept of "stores" to sync application data in a variety of forms- persistent and non-persistent. It provides a uniform means of syncing data between local storage, MongoDB, cookies, sessions and URL params. More databases are planned for future releases.
 
@@ -59,7 +59,7 @@ Here's the view code:
     <input class="form-control" type="text" value="{{ page._input }}" />
   </form>
   <ul>
-    {{ _chat_messages.reverse_each do |msg| }}
+    {{ _chat_messages.each do |msg| }}
       <ul><button e-click="msg.destroy">X</button>{{ msg._text }}</ul>
     {{ end }}
   </ul>
@@ -70,7 +70,7 @@ Here's a GIF screencast of the update events rendering in realtime:
 
 ## Full HTTP Endpoint Support
 
-It's a common misconception that Volt is only a realtime framework. It also provides workflows for traditional HTTP application development.
+It's a common misconception that Volt is only a realtime framework. Volt provides workflows for traditional HTTP application development.
 
 Here's an example [straight from the docs](https://github.com/voltrb/volt/blob/1b692e70f4cea3b6b42f9e5c67f192f6447bff93/spec/apps/kitchen_sink/app/main/controllers/server/simple_http_controller.rb):
 
