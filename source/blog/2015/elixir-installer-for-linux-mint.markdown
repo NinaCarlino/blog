@@ -3,7 +3,7 @@ title: Elixir Installer For Linux Mint 17
 date: 2015/04/23
 author: Jason
 tags: Elixir, Installation, Linux Mint
-published: false
+published: true
 featured_image: elixir.png
 ---
 
