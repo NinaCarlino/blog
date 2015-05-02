@@ -3,7 +3,7 @@ title: "Volt: First Impressions"
 date: 2015/04/28
 author: Rick
 tags: Ruby, Volt
-published: false
+published: true
 featured_image: volt.png
 ---
 

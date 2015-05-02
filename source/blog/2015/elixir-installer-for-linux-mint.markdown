@@ -3,7 +3,7 @@ title: Elixir Installer For Linux Mint 17
 date: 2015/04/23
 author: Jason
 tags: Elixir, Installation, Linux Mint
-published: false
+published: true
 featured_image: elixir.png
 ---
 
@@ -15,6 +15,7 @@ Both Rick and I are avid users of Linux Mint. After experiencing some issues wit
 
 Using the new script is easy. [Click here to visit the repo](https://github.com/DataMelon/install-elixir-1.0.4) or follow these instructions.
 
+Note: this script is for initial installation of Elixir and not for upgrading from 1.0.3 to 1.0.4. This script does not remove anything from the machine it runs on, but may override older installations of Erlang. Use with caution.
 
 #### Installation
 
