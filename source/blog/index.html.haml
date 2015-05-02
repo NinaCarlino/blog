@@ -1,7 +1,7 @@
 ---
 pageable: true
 ---
-.large-9.columns
+.large-9.columns.push
   - page_articles.each do |article|
     .row.spaced
       .large-4.small-12.columns
@@ -22,16 +22,15 @@ pageable: true
                 = "on #{article.date.strftime("%B %Y")}"
           %p
             = article.summary(300)
-          %p
-            = link_to("Read More &raquo", article.url)
-          %hr
+        %p.read
+          = link_to("Read More &raquo", article.url)
     %br
     / %hr
   - if paginate
     - if prev_page
-      = link_to '&laquo; Previous', prev_page, class: 'button small round left'
+      = link_to '&laquo; Previous', prev_page, class: 'button small round left pagination'
     - if next_page
-      = link_to '&raquo; Next', next_page, class: 'button small round right'
+      = link_to '&raquo; Next', next_page, class: 'button small round right pagination'
 
 .large-3.columns
   .panel.newsletterbox

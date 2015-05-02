@@ -21,6 +21,7 @@ activate :deploy do |deploy|
   deploy.path   = '~/www/'
   deploy.clean  = true # remove orphaned files on remote host, default: false
 end
+page 'index.html.haml', layout: false
 
 activate :blog do |blog|
 
@@ -67,6 +68,3 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, '/Content/images/'
 end
-
-# page 'index.html.haml', layout: false
-page '*.html.haml', layout: false
