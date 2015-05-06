@@ -11,10 +11,10 @@ p{
   font-family: Helvetica, Arial, sans-serif;
 }
 .top-thing{
-  position: relative;
+  /*position: relative;
   top: -45px;
-  z-index: -1;
-  background: url(/images/desktop.png) no-repeat center;
+  z-index: -1;*/
+  /*background: url(/images/desktop.png) no-repeat center;*/
   height: inherit;
 }
 .intro-text{
@@ -22,7 +22,7 @@ p{
   text-align: center;
 }
 .intro-text h1{
-  font-size: 40px;
+  font-size: 50px;
 }
 .nav-bar{
   width: 100%;
