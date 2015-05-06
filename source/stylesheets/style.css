@@ -11,10 +11,6 @@ p{
   font-family: Helvetica, Arial, sans-serif;
 }
 .top-thing{
-  /*position: relative;
-  top: -45px;
-  z-index: -1;*/
-  /*background: url(/images/desktop.png) no-repeat center;*/
   height: inherit;
 }
 .intro-text{

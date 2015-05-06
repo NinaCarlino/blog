@@ -36,10 +36,5 @@
             %a{:href => "/blog"} Blog
           %li
             %a{:href => "/#contact"} Contact
-    - if current_page.path == "index.html"
-      .hero.top-thing
-        .row
-          .large-12.columns.intro-text
-
-            %h1 Custom Business Software and Support
+    = partial "splash" if current_page.path == "index.html"
     .row
