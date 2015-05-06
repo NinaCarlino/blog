@@ -34,5 +34,10 @@
 %script{:src => "//static.getclicky.com/js", :type => "text/javascript"}
 :javascript
   try{ clicky.init(100830842); }catch(e){}
+  $(document).foundation({
+    dropdown: {
+      active_class: 'f-dropdown'
+    }
+  });
 %noscript
   %img{:alt => "Clicky", :height => "1", :src => "//in.getclicky.com/100830842ns.gif", :width => "1"}/

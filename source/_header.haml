@@ -18,14 +18,30 @@
       ga('create', 'UA-59161926-1', 'auto');
       ga('send', 'pageview');
     %script{:src => "https://mailtoninja-kickstrap.netdna-ssl.com/js/v0/mailto.ninja.js", :type => "text/javascript"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.dropdown.min.js", :type => "text/javascript"}
+
   %body
     / page
     .nav-bar
       .namelogo
         %a{href: 'http://www.datamelon.io'}
-          = link_to(image_tag("logo.png", class: "dm-logo"), '/')
+        = link_to(image_tag("logo.png", class: "dm-logo"), '/')
 
         %ul.top-nav
+          %li
+            %a{:href => "/#services"} Services
+          %li
+            %a{:href => "/#team"} Team
+          %li
+            %a{:href => "/#about"} About
+          %li
+            %a{:href => "/blog"} Blog
+          %li
+            %a{:href => "/#contact"} Contact
+        %a.mobile{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1"} MENU
+        %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => "", :tabindex => "-1"}
           %li
             %a{:href => "/#services"} Services
           %li

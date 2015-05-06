@@ -11,14 +11,28 @@ p{
   font-family: Helvetica, Arial, sans-serif;
 }
 .top-thing{
-  height: inherit;
+  height: 50%;
 }
 .intro-text{
-  padding-top: 25%;
-  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  text-align: left;
 }
 .intro-text h1{
   font-size: 50px;
+}
+@media only screen and (max-width: 40em) {
+  .intro-text{
+  padding-top: 5%;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  }
+  .intro-text h1 {
+  font-size: 34px;
+  }
+  .intro-text h4 {
+  font-size: 18px;
+  }
 }
 .nav-bar{
   width: 100%;
@@ -32,6 +46,24 @@ p{
   padding-top: 20px;
   float: right;
   margin-right: 30px;
+}
+@media only screen and (max-width: 40em) {
+  .top-nav{
+    display: none;
+  }
+  .mobile{
+    display: block;
+    float: right;
+    margin-right: 20px;
+    padding-top: 15px;
+    font-size: 25px;
+    color: #000;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .mobile{
+    display: none;
+  }
 }
 .top-nav li{
   display: inline;
@@ -48,6 +80,24 @@ p{
 .namelogo h1{
   color: #1E881E;
 }
+@media only screen and (max-width: 40em) {
+  .namelogo a img{
+    width: 180px;
+    height: auto;
+    padding-top: 15px;
+    float: left;
+  }
+  .dm-logo{
+    margin-left: 10px;
+  }
+}
+@media only screen and (min-width: 34em) and (max-width: 52em){
+  .namelogo a img{
+    width: 200px;
+    height: auto;
+    padding-top: 15px;
+  }
+}
 .dm-logo {
   padding-top: 5px;
   margin-left: 30px;
@@ -61,6 +111,28 @@ p{
 .work{
   padding-top: 50px;
   padding-bottom: 50px;
+}
+@media only screen and (max-width: 40em) {
+  .work h4{
+    padding-left: 20px;
+    font-size: 24px;
+  }
+  .work ul li img{
+    width: 150px;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 34em) and (max-width: 52em){
+  .work ul li img{
+    width: 100px;
+    height: auto;
+  }
+  .work ul li h4{
+    font-size: 20px;
+  }
+  .work h4{
+    padding-left: 20px;
+  }
 }
 .bullet-point{
   text-align: center;
